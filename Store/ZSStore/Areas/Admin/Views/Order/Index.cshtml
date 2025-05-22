@@ -1,0 +1,19 @@
+@model IEnumerable<Order>
+
+@if (Model.Any())
+{
+    @foreach (Order order in Model)
+    {
+        <div class="my-3">
+            <partial name="_OrderDetails" model="order" />
+        </div>
+    }
+}
+else
+{
+    <div class="alert alert-info text-center shadow-sm p-4 rounded">
+        <i class="fa fa-info-circle fa-2x mb-2 d-block"></i>
+        <h5>Hiç sipariş bulunamadı.</h5>
+        <p class="mb-0">Müşterileriniz sipariş verdiğinde burada listelenecek.</p>
+    </div>
+}

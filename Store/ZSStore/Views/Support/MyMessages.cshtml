@@ -1,0 +1,50 @@
+@model IEnumerable<Entities.Models.SupportMessage>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-info text-white text-center py-3 rounded-top-4">
+                    <h4 class="mb-0">
+                        <i class="fa-solid fa-comments me-2"></i> Gönderdiğiniz Destek Talepleri
+                    </h4>
+                </div>
+
+                <div class="card-body p-4">
+
+                    @if (!Model.Any())
+                    {
+                        <div class="alert alert-info text-center mb-0">
+                            <i class="fa fa-info-circle me-2"></i>Henüz bir destek talebiniz bulunmamaktadır.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-striped align-middle table-hover">
+                                <thead class="table-light">
+                                    <tr class="text-center">
+                                        <th scope="col"><i class="fa fa-envelope"></i> Mesaj</th>
+                                        <th scope="col"><i class="fa fa-calendar-alt"></i> Gönderim Tarihi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr class="text-center">
+                                            <td class="text-start">@item.Message</td>
+                                            <td>@item.Date.ToString("dd.MM.yyyy HH:mm")</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

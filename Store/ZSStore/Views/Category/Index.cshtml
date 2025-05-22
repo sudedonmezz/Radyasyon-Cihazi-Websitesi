@@ -1,0 +1,14 @@
+@using Entities.Models;
+@model IQueryable<Category>
+
+@foreach(Category cat in @Model)
+    {
+        <div>
+
+        <p><strong>@cat.CategoryId</strong></p>
+        <p><strong>@cat.CategoryName</strong></p>
+     
+        
+        </div>
+          
+    }

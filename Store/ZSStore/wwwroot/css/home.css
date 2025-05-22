@@ -1,0 +1,239 @@
+.main-header {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+body {
+    padding-top: 80px; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-header .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-right: 40px;
+}
+.logo span {
+    color: #f3c300;
+}
+
+
+.nav-middle {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-middle a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+    transition: 0.3s;
+}
+
+.nav-middle a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #f3c300;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+.nav-middle a:hover::after {
+    width: 100%;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-login {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-right i {
+    font-size: 22px;
+    color: #333;
+    cursor: pointer;
+}
+
+
+.navbar-nav .nav-link {
+    color: #333; 
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f3c300 !important; 
+}
+.hero-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rounded-box {
+    background-color: #fff8e1;
+    border-radius: 30px; 
+    padding: 60px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.4;
+}
+
+
+.hero-img {
+    max-height: 550px; 
+    object-fit: contain;
+    margin-top: 50px;  /* Aşağı doğru itmek için */
+}
+
+.features-section {
+    background-color: #fdfdfd;
+    margin-top: 80px; 
+}
+
+.feature-box {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.hero-section {
+    background-color: #fff8e1;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.hero-wrapper {
+    background-color: #fff8e1; 
+    padding: 80px 0;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.hero-img {
+    max-height: 450px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.about-us h2 {
+    font-weight: 600;
+    color: #222;
+}
+
+.details-section {
+    background-color: #fefefe;
+    border-top: 1px solid #eee;
+}
+
+.details-section h2 {
+    font-size: 1.9rem;
+    color: #222;
+}
+
+.details-section img {
+    max-height: 280px;
+    object-fit: cover;
+}
+
+footer a.text-dark:hover {
+    color: #ffc107; 
+    text-decoration: underline;
+}
+
+
+
+.hero-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.bg-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, #fff4c2, #f3c30030);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-img {
+    max-height: 500px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.05);
+}
+
+
+.device-label {
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    background-color: #f3c300;
+    color: #000;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.rounded-box {
+    background: linear-gradient(135deg, #fff4d1, #fff8e1);
+    border-radius: 30px;
+    padding: 60px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}

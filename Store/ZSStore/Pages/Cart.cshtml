@@ -1,0 +1,79 @@
+@page "/cart"
+@model CartModel
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+
+            <div class="card shadow rounded-4">
+                <div class="card-header bg-warning-subtle text-dark text-center py-4">
+                    <h3 class="mb-0"><i class="fa fa-shopping-cart me-2"></i>Sepetiniz</h3>
+                </div>
+
+                <div class="card-body p-4">
+                    @if (Model.Cart?.Lines.Any() == true)
+                    {
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr class="text-center">
+                                    <th scope="col">Ürün</th>
+                                    <th scope="col">Adet</th>
+                                    <th scope="col">Birim Fiyat</th>
+                                    <th scope="col">Toplam</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var line in Model.Cart.Lines)
+{
+    <tr class="text-center">
+        <td>@line.Product.ProductName</td>
+        <td>@line.Quantity</td>
+        <td>@line.Product.ProductPrice.ToString("C2")</td>
+        <td class="text-danger">@((line.Product.ProductPrice * line.Quantity).ToString("C2"))</td>
+        <td>
+            <form method="post" asp-page-handler="Remove">
+                <input type="hidden" name="id" value="@line.Product.ProductId" />
+                <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                <button type="submit" class="btn btn-sm btn-outline-danger">
+                    <i class="fa fa-trash"></i> 
+                </button>
+            </form>
+        </td>
+    </tr>
+}
+
+                            </tbody>
+                            <tfoot>
+                                <tr class="fw-bold text-end">
+                                    <td colspan="3"></td>
+                                    <td class="text-danger">Toplam:</td>
+                                    <td class="text-danger">@Model.Cart.ComputerTotalValue()</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    }
+                    else
+                    {
+                        <div class="text-center text-muted py-4">
+                            <i class="fa fa-info-circle fa-2x mb-2"></i>
+                            <p>Sepetiniz şu anda boş.</p>
+                        </div>
+                    }
+                </div>
+
+                <div class="card-footer text-end">
+                    <div class="btn-group">
+
+
+                    </div>
+                    <a href="@Model.ReturnUrl" class="btn btn-outline-secondary">
+                        <i class="fa fa-arrow-left"></i> Alışverişe Dön
+                    </a>
+                    <a class="btn btn-primary mx-2" asp-action="Checkout" asp-controller="Order">Devam Et</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

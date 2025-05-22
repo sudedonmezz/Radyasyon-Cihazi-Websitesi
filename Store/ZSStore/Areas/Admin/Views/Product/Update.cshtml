@@ -1,0 +1,89 @@
+@model ProductDtoForUpdate
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            
+            <div class="card shadow p-4">
+                <div class="card-body">
+                    <h3 class="text-center mb-4">Ürün Güncelle</h3>
+
+                    <form method="post" asp-action="Update" enctype="multipart/form-data">
+                        <div class="text-danger mb-3" asp-validation-summary="All"></div>
+                        <input type="hidden" asp-for="ProductId" />
+
+                         <div class="form-group mb-3">
+
+                             <label asp-for="CategoryId"></label>
+                            <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.Categories">
+                               
+                            
+                            </select>
+                         </div>
+                           
+
+                         
+                        <div class="form-group mb-3">
+                            <label asp-for="ProductName"></label>
+                            <input asp-for="ProductName" class="form-control" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="ProductPrice"></label>
+                            <input asp-for="ProductPrice" class="form-control" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="ProductDescription"></label>
+                            <textarea asp-for="ProductDescription" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="ProductTechnicalSpecs"></label>
+                            <textarea asp-for="ProductTechnicalSpecs" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="ProductUsageAreas"></label>
+                            <textarea asp-for="ProductUsageAreas" class="form-control" rows="2"></textarea>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="ProductDocumentsPath"></label>
+                            <input asp-for="ProductDocumentsPath" class="form-control" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="ProductWeight"></label>
+                            <input asp-for="ProductWeight" class="form-control" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <img class="rounded shadow" width="150" src="@Model?.ImageUrl" />
+                        </div>
+                                
+                         
+                         <div class="form-group mb-3">
+                            <label>Ürün Görseli</label>
+                            <input name="file" type="file" class="form-control" />
+                         </div>
+                            
+                        
+
+                        <div class="form-group text-center mt-4">
+                            <div class="btn-group">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-save"></i> Kaydet
+                                </button>
+                                <a asp-action="Index" class="btn btn-outline-primary">
+                                    <i class="fa fa-list"></i> Geri
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
